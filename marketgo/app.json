@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "MarketGo",
+    "slug": "marketgo",
+    "scheme": "marketgo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vinivini26.marketgo"
+    },
+    "android": {
+      "package": "com.vinivini26.marketgo",
+      "predictiveBackGestureEnabled": false
+    }
+  }
+}

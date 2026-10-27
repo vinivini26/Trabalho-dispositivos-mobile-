@@ -33,3 +33,7 @@ Histórico de decisões, erros, prompts e soluções: [relatório de desenvolvim
 ## Validação desta etapa
 
 Flutter 3.47.7 e Dart 3.13.5. Análise estática aprovada e 1 teste de widget aprovado. APK debug gerado com sucesso em `build/app/outputs/flutter-apk/app-debug.apk`. Instalação em celular físico ainda não validada.
+
+## MarketGo — React Native
+
+O novo projeto de compras com entrega está em [marketgo/](marketgo/README.md). O FinTrack Flutter permanece na raiz. Veja o [relatório do MarketGo](marketgo/docs/RELATORIO_DESENVOLVIMENTO.md).
