@@ -1,0 +1,115 @@
+
+> marketgo@1.0.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+> marketgo@1.0.0 test:app
+> jest --runInBand
+
+PASS __tests__/catalog.test.ts
+PASS __tests__/checkout.test.ts
+PASS __tests__/cart.test.ts
+PASS __tests__/orders.test.ts
+PASS __tests__/money.test.ts
+
+Test Suites: 5 passed, 5 total
+Tests:       37 passed, 37 total
+Snapshots:   0 total
+Time:        0.672 s, estimated 1 s
+Ran all test suites.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+▶ leitura e permissões
+  ✔ usuário logado lê lojas e só os produtos ativos (6.416885ms)
+  ✔ o app não consegue inserir pedidos diretamente (2.992723ms)
+  ✔ visitante (anon) não executa as funções (1.031495ms)
+✔ leitura e permissões (1092.473079ms)
+▶ create_order
+  ✔ calcula o total no servidor e guarda os itens (snapshot) (14.85687ms)
+  ✔ respeita o pedido mínimo da loja (5.27736ms)
+  ✔ recusa loja fechada (2.818876ms)
+  ✔ recusa itens inválidos: outra loja, inativo, quantidade e repetidos (12.067185ms)
+  ✔ valida carrinho vazio, login, endereço e pagamento (7.162997ms)
+  ✔ troco: só vale em dinheiro e precisa cobrir o total (10.278702ms)
+✔ create_order (53.275594ms)
+▶ privacidade e status
+  ✔ cada usuário só vê os próprios pedidos e itens (31.441832ms)
+  ✔ o pedido avança na ordem certa e para em entregue (9.067993ms)
+  ✔ outro usuário não avança nem cancela o pedido alheio (6.607767ms)
+  ✔ só cancela enquanto o pedido está recebido (9.647469ms)
+✔ privacidade e status (57.209208ms)
+ℹ tests 13
+ℹ suites 3
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1230.881799
+
+Verificação local da matriz Expo (offline)
+Dependency validation is unreliable in offline-mode
+Dependencies are up to date
+
+Tipagem após ajustes finais
+
+> marketgo@1.0.0 typecheck
+> tsc --noEmit
+
+
+Exportação Android após ajustes finais
+Starting Metro Bundler
+
+Android Bundled 11679ms node_modules/expo-router/entry.js (1550 modules)
+
+› Assets (46):
+node_modules/@expo-google-fonts/material-symbols/400Regular/MaterialSymbols_400Regular.ttf (973KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.ttf (130KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.ttf (66KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/EvilIcons.ttf (13KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ttf (56KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf (166KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf (134KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf (34KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf (203KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Brands.ttf (209KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Regular.ttf (68KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Solid.ttf (424KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Fontisto.ttf (314KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Foundation.ttf (57KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf (390KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf (1.3MB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf (357KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Octicons.ttf (69KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.ttf (54KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Zocial.ttf (26KB)
+node_modules/expo-router/assets/arrow_down.png (9.5KB)
+node_modules/expo-router/assets/arrow_right.xml (307B)
+node_modules/expo-router/assets/checkmark.xml (312B)
+node_modules/expo-router/assets/error.png (469B)
+node_modules/expo-router/assets/file.png (138B)
+node_modules/expo-router/assets/forward.png (188B)
+node_modules/expo-router/assets/pkg.png (364B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon-mask.png (653B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon.png (4 variations | 152B)
+node_modules/expo-router/assets/react-navigation/elements/clear-icon.png (4 variations | 425B)
+node_modules/expo-router/assets/react-navigation/elements/close-icon.png (4 variations | 235B)
+node_modules/expo-router/assets/react-navigation/elements/search-icon.png (4 variations | 599B)
+node_modules/expo-router/assets/sitemap.png (465B)
+node_modules/expo-router/assets/unmatched.png (4.8KB)
+
+› android bundles (1):
+_expo/static/js/android/entry-c95ee701a5ed91e7f2f9ebe91735b6d2.hbc (4.9MB)
+
+› Files (1):
+metadata.json (3KB)
+
+Exported: /workspace/work/export-android
