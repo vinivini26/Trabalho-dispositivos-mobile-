@@ -191,3 +191,7 @@ de desenvolvimento. Credenciais públicas podem ser configuradas nas variáveis 
 repositório; sem elas, o APK abre a configuração inicial. A execução do workflow precisa
 concluir com sucesso antes de se considerar um APK gerado. Não houve nova alegação de
 teste com Google, Spotify ou GPS reais.
+
+A primeira execução do GitHub Actions parou na preparação do SDK porque o pacote
+legado `tools` já não estava disponível. A action foi configurada para instalar somente
+`platform-tools`, e as versões de SDK/NDK/CMake são solicitadas explicitamente no passo seguinte.
