@@ -89,7 +89,7 @@ Os identificadores nativos são `com.vinivini26.rotafit`.
 | Matriz Expo (`expo install --check`, offline) | Compatível com a matriz instalada; checagem não consulta o serviço Expo |
 | Interface em Chromium | 32 verificações aprovadas após simplificação; serviços e GPS simulados |
 | Exportação Android | Bundle JavaScript/Hermes gerado; 1.595 módulos |
-| APK Android nativo (`assembleDebug`) | Nesta revisão, sem JitPack; bloqueado no download de React Native por `repo.reactnative.dev` |
+| APK Android nativo (`assembleRelease`, GitHub Actions) | Aprovado; [execução](https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957), artefato arm64 disponibilizado |
 | Sem credenciais | Tela de configuração testada em 320×568, tema persistente, sem erro JS ou overflow |
 
 Ambiente de verificação: Node 24.19.0 e Chromium 154.0.8037.57.
@@ -195,3 +195,26 @@ teste com Google, Spotify ou GPS reais.
 A primeira execução do GitHub Actions parou na preparação do SDK porque o pacote
 legado `tools` já não estava disponível. A action foi configurada para instalar somente
 `platform-tools`, e as versões de SDK/NDK/CMake são solicitadas explicitamente no passo seguinte.
+
+## Resultado final da compilação Android
+
+A execução [42512010957](https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957), compilando o commit `3075375`, terminou com **sucesso**:
+
+- TypeScript e os 52 testes de regras/hooks e banco passaram no GitHub também.
+- `assembleRelease` concluiu em **13m35s**, com **617 tarefas executadas**.
+- Bundle Android: **1.595 módulos**.
+- [RotaFit-homologacao-arm64](https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957/artifacts/13630012629): ZIP de **27.487.062 bytes**, contendo
+  `RotaFit-homologacao-arm64.apk` e `SHA256SUMS.txt`.
+- SHA-256 do ZIP registrado pelo GitHub:
+  `e29504cc2f63670fa6f57e37ce7c155f1b49b6fed22fce2a3f1d51b8308d0fca`.
+- Disponibilidade inicial do artefato: até **22/11/2026**; o workflow permite gerar novamente.
+
+O APK inclui JavaScript e usa assinatura de desenvolvimento para homologação. Sem as
+variáveis públicas do Supabase, esta compilação abre a configuração inicial. Configurar
+Supabase/Google/Spotify e testar com aparelho físico continuam necessários para validar
+as integrações reais. A compilação aprovada não equivale a esses testes de campo.
+
+A tela de configuração também foi verificada novamente após a revisão visual em 320×568:
+sem erros JavaScript ou overflow horizontal, com persistência do tema. Os 32 cenários de
+interface usam backend/GPS/Spotify simulados. As capturas publicadas representam a versão
+sem blur, com o fundo das abas corrigido nos dois temas.

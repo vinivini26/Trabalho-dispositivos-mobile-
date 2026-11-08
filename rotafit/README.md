@@ -97,10 +97,14 @@ Resultados e limitações: [relatório](docs/RELATORIO_DESENVOLVIMENTO.md),
 
 ## APK pelo GitHub Actions
 
-Na aba **Actions** do repositório, abra **RotaFit - Testes e APK**. A rotina executa
-os testes e compila um APK arm64 com o JavaScript incluído. Quando concluir com sucesso,
-abra a execução e baixe **Artifacts → RotaFit-homologacao-arm64**. Também pode ser
-iniciada por **Run workflow**. O artefato fica disponível por 14 dias.
+**APK gerado com sucesso:** [baixar RotaFit-homologacao-arm64](https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957/artifacts/13630012629)
+(arquivo ZIP, aproximadamente 27,5 MB; contém APK e checksum).
+[Execução aprovada](https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957): 52 testes passaram e o build nativo concluiu em 13m35s.
+O código compilado corresponde ao commit `3075375`.
+
+Para gerar uma nova versão, abra **Actions → RotaFit - Testes e APK → Run workflow**.
+Ao concluir, baixe **Artifacts → RotaFit-homologacao-arm64**. O JavaScript está incluído
+no APK; não precisa manter o Metro aberto. Os artefatos ficam disponíveis por 14 dias.
 
 O APK é para homologação, usa a chave de assinatura de desenvolvimento do template
 Expo e não é uma versão assinada para publicação em loja. Para configurar as integrações,
@@ -109,10 +113,8 @@ Actions → Variables** do repositório antes de executar. Sem elas, o app mostr
 inicial; isso não equivale a login/corrida homologados. Não coloque segredos de servidor
 nessas variáveis. Nunca use `service_role` ou client secret no bundle.
 
-O build local desta revisão ultrapassou a etapa que exigia JitPack, mas o ambiente
-bloqueou `repo.reactnative.dev`, servidor de uma dependência essencial do React Native.
-O resultado do workflow deve ser conferido na aba Actions; a existência do arquivo de
-workflow, por si só, não comprova a geração de um APK.
+A compilação foi concluída no GitHub Actions. O registro da tentativa local bloqueada
+por rede permanece no relatório como histórico; a geração do APK foi confirmada no CI.
 
 ## Capturas
 

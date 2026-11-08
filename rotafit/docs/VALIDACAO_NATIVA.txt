@@ -1,50 +1,26 @@
 RotaFit — vinivini26
-Revisão sem expo-blur/JitPack.
-JDK 17; SDK 36; NDK 27.1.12297006; assembleDebug arm64-v8a.
-O build ultrapassou a antiga falha no JitPack; APK local não gerado por bloqueio em repo.reactnative.dev.
+Compilação Android aprovada no GitHub Actions — 08/11/2026
+Fonte: commit 30753755c133f4763c10bd19007145626cbce499
+Execução: https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957
+Job: 128826898382; conclusão: success
 
-FAILURE: Build completed with 2 failures.
+TypeScript: aprovado
+App: 6 suítes; 41 testes aprovados
+Banco: 11 testes aprovados
+Bundle Android: 1595 módulos
+BUILD SUCCESSFUL in 13m 35s
+617 actionable tasks: 617 executed
 
-1: Task failed with an exception.
------------
-* What went wrong:
-Execution failed for task ':app:checkDebugAarMetadata'.
-> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
-   > Failed to transform react-android-0.86.3-debug.aar (com.facebook.react:react-android:0.86.3) to match attributes {artifactType=android-aar-metadata, com.android.build.api.attributes.BuildTypeAttr=debug, org.gradle.category=library, org.gradle.dependency.bundling=external, org.gradle.libraryelements=aar, org.gradle.status=release, org.gradle.usage=java-runtime}.
-      > Could not download react-android-0.86.3-debug.aar (com.facebook.react:react-android:0.86.3)
-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/facebook/react/react-android/0.86.3/react-android-0.86.3-debug.aar'.
-            > Could not GET 'https://repo.reactnative.dev/maven2/com/facebook/react/react-android/0.86.3/react-android-0.86.3-debug.aar'. Received status code 403 from server: Forbidden
+Artefato: RotaFit-homologacao-arm64
+ID: 13630012629
+Tamanho ZIP: 27487062 bytes
+SHA-256 ZIP: e29504cc2f63670fa6f57e37ce7c155f1b49b6fed22fce2a3f1d51b8308d0fca
+Download: https://github.com/vinivini26/Trabalho-dispositivos-mobile-/actions/runs/42512010957/artifacts/13630012629
+Conteúdo produzido pelo workflow: RotaFit-homologacao-arm64.apk e SHA256SUMS.txt
+Validade inicial do artefato: 22/11/2026
 
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights from a Build Scan (powered by Develocity).
-> Get more help at https://help.gradle.org.
-==============================================================================
-
-2: Task failed with an exception.
------------
-* What went wrong:
-Execution failed for task ':react-native-worklets:compileDebugKotlin'.
-> Error while evaluating property 'friendPathsSet$kotlin_gradle_plugin_common' of task ':react-native-worklets:compileDebugKotlin'.
-   > Could not resolve all files for configuration ':react-native-worklets:debugCompileClasspath'.
-      > Failed to transform react-android-0.86.3-debug.aar (com.facebook.react:react-android:0.86.3) to match attributes {artifactType=android-classes-jar, com.android.build.api.attributes.BuildTypeAttr=debug, org.gradle.category=library, org.gradle.dependency.bundling=external, org.gradle.libraryelements=aar, org.gradle.status=release, org.gradle.usage=java-api}.
-         > Could not download react-android-0.86.3-debug.aar (com.facebook.react:react-android:0.86.3)
-            > Could not get resource 'https://repo.maven.apache.org/maven2/com/facebook/react/react-android/0.86.3/react-android-0.86.3-debug.aar'.
-               > Could not GET 'https://repo.reactnative.dev/maven2/com/facebook/react/react-android/0.86.3/react-android-0.86.3-debug.aar'. Received status code 403 from server: Forbidden
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights from a Build Scan (powered by Develocity).
-> Get more help at https://help.gradle.org.
-==============================================================================
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-
-BUILD FAILED in 1m 35s
-167 actionable tasks: 139 executed, 28 up-to-date
+Sem expo-blur/BlurView/JitPack no aplicativo.
+APK arm64 de homologação, JavaScript incluído, assinatura de desenvolvimento.
+Sem variáveis Supabase, abre configuração inicial.
+Não instalado em aparelho físico; Google/Spotify/GPS reais ainda não homologados.
+As falhas das tentativas locais anteriores estão documentadas no histórico do relatório.

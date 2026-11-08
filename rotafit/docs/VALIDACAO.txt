@@ -111,3 +111,6 @@ _expo/static/js/android/entry-a0f206e2c171a664343eb7cda37093b9.hbc (4.3MB)
 metadata.json (3KB)
 
 Exported: /workspace/work/android-simple-final
+
+=== Inicialização sem credenciais após revisão visual ===
+PASS: sem credenciais, tela de configuração acessível em 320×568; tema persiste; sem erros JS nem overflow horizontal.
