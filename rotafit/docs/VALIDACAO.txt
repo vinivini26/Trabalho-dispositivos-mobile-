@@ -1,11 +1,11 @@
 RotaFit — vinivini26
-Validação em 08/11/2026. Node 24; Chromium; APIs externas simuladas nos testes de interface.
+Revisão visual sem expo-blur/JitPack — 08/11/2026
 
 === TypeScript ===
 > rotafit@1.0.0 typecheck
 > tsc --noEmit
 
-=== Testes do app e banco ===
+=== Testes app e banco ===
 > rotafit@1.0.0 test
 > npm run test:app && npm run test:db
 
@@ -23,29 +23,29 @@ PASS __tests__/greeting.test.ts
 Test Suites: 6 passed, 6 total
 Tests:       41 passed, 41 total
 Snapshots:   0 total
-Time:        2.88 s, estimated 3 s
+Time:        1.347 s, estimated 2 s
 Ran all test suites.
 
 > rotafit@1.0.0 test:db
 > node --test "supabase/tests/*.test.mjs"
 
 ▶ segurança e privacidade
-  ✔ cada usuário só lê as próprias corridas (30.748061ms)
-  ✔ não é possível criar uma corrida em nome de outro usuário (7.74329ms)
-  ✔ visitante (anon) não lê nem escreve (8.074319ms)
-  ✔ cada usuário só apaga as próprias corridas (88.262429ms)
-✔ segurança e privacidade (4236.280871ms)
+  ✔ cada usuário só lê as próprias corridas (20.026026ms)
+  ✔ não é possível criar uma corrida em nome de outro usuário (6.095574ms)
+  ✔ visitante (anon) não lê nem escreve (3.021274ms)
+  ✔ cada usuário só apaga as próprias corridas (15.416904ms)
+✔ segurança e privacidade (2377.939326ms)
 ▶ restrições dos dados
-  ✔ recusa distância negativa (11.711567ms)
-  ✔ recusa duração zero ou negativa (16.490855ms)
-  ✔ recusa terminar antes de começar (7.07114ms)
-  ✔ aceita ritmo médio nulo (corrida sem distância registrada) (8.649186ms)
-  ✔ guarda a rota como jsonb consultável (10.559826ms)
-✔ restrições dos dados (55.221244ms)
+  ✔ recusa distância negativa (3.312752ms)
+  ✔ recusa duração zero ou negativa (3.009442ms)
+  ✔ recusa terminar antes de começar (27.504135ms)
+  ✔ aceita ritmo médio nulo (corrida sem distância registrada) (4.996132ms)
+  ✔ guarda a rota como jsonb consultável (4.266466ms)
+✔ restrições dos dados (43.791631ms)
 ▶ weekly_stats
-  ✔ soma só as corridas da semana atual e só as do usuário logado (79.139083ms)
-  ✔ visitante (anon) não executa a função (9.670492ms)
-✔ weekly_stats (89.063961ms)
+  ✔ soma só as corridas da semana atual e só as do usuário logado (26.017734ms)
+  ✔ visitante (anon) não executa a função (2.100367ms)
+✔ weekly_stats (28.353044ms)
 ℹ tests 11
 ℹ suites 3
 ℹ pass 11
@@ -53,20 +53,20 @@ Ran all test suites.
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 4940.757437
-
-=== Prettier ===
-Checking formatting...
-All matched files use Prettier code style!
+ℹ duration_ms 2988.494084
 
 === Matriz Expo offline ===
 Dependency validation is unreliable in offline-mode
 Dependencies are up to date
 
-=== Exportação Android (JavaScript/Hermes; não é APK) ===
+=== Prettier ===
+Checking formatting...
+All matched files use Prettier code style!
+
+=== Bundle Android ===
 Starting Metro Bundler
 
-Android Bundled 26290ms node_modules/expo-router/entry.js (1599 modules)
+Android Bundled 9897ms node_modules/expo-router/entry.js (1595 modules)
 
 › Assets (46):
 node_modules/@expo-google-fonts/material-symbols/400Regular/MaterialSymbols_400Regular.ttf (974KB)
@@ -105,12 +105,9 @@ node_modules/expo-router/assets/sitemap.png (465B)
 node_modules/expo-router/assets/unmatched.png (4.8KB)
 
 › android bundles (1):
-_expo/static/js/android/entry-919936d8d19f86f36db6c9e37bdc05f4.hbc (4.3MB)
+_expo/static/js/android/entry-a0f206e2c171a664343eb7cda37093b9.hbc (4.3MB)
 
 › Files (1):
 metadata.json (3KB)
 
-Exported: /workspace/work/rotafit-android-verified
-
-=== Sem configuração Supabase (serviços não conectados) ===
-PASS: sem credenciais, tela de configuração acessível em 320×568; tema persiste; sem erros JS nem overflow horizontal.
+Exported: /workspace/work/android-simple-final

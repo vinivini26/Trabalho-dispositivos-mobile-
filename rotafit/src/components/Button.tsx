@@ -47,11 +47,6 @@ export function Button({
   // destacarem como o toque principal da tela; secundário e cartões ficam
   // mais translúcidos, para o "vidro" aparecer de verdade.
   const solidOpacity = variant === 'ghost' ? 0.12 : variant === 'secondary' ? 0.6 : 0.94;
-  // Com a cor quase opaca, o desfoque por baixo só esmaece a cor (o véu claro
-  // do blur "light" do iOS, por exemplo) sem servir para nada: desligamos o
-  // blur nesses casos e deixamos só o brilho e a borda do vidro.
-  const solidIntensity =
-    variant === 'primary' || variant === 'danger' || variant === 'dark' ? 0 : 40;
 
   return (
     <Pressable
@@ -69,7 +64,6 @@ export function Button({
         tint={variant === 'ghost' ? undefined : tint}
         radius={radius.pill}
         style={[styles.base, glassShadow(glow)]}
-        intensity={solidIntensity}
         opacity={solidOpacity}
       >
         {loading ? (

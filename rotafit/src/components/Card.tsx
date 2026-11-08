@@ -14,12 +14,7 @@ interface CardProps {
 // player do Spotify, histórico, formulários).
 export function Card({ children, style, tint }: CardProps) {
   return (
-    <GlassSurface
-      tint={tint}
-      radius={radius.lg}
-      style={[styles.pad, style]}
-      intensity={30}
-    >
+    <GlassSurface tint={tint} radius={radius.lg} style={[styles.pad, style]}>
       {children}
     </GlassSurface>
   );

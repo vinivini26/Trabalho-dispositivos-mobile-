@@ -53,7 +53,6 @@ export default function LoginScreen() {
             tint="#050505"
             radius={radius.pill}
             style={[styles.button, glassShadow(theme.primary)]}
-            intensity={0}
             opacity={0.94}
           >
             <View style={styles.buttonContent}>

@@ -15,7 +15,7 @@ export function ThemePicker() {
   const { theme, preference, setPreference } = useTheme();
 
   return (
-    <GlassSurface radius={radius.pill} style={styles.wrap} intensity={20}>
+    <GlassSurface radius={radius.pill} style={styles.wrap}>
       <View style={styles.row}>
         {OPTIONS.map((opt) => {
           const selected = opt.value === preference;

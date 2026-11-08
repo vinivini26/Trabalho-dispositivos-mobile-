@@ -3,6 +3,7 @@ Início 320×568: sem overflow horizontal
 Histórico vazio 320×568
 Perfil escuro 320×568: sem overflow horizontal
 Tema escuro persiste ao reabrir 320×568
+Fundo e contraste claro/escuro 320×568
 Erro Spotify 403 tratado 320×568
 Corrida 320×568: sem overflow horizontal
 Resumo 320×568: sem overflow horizontal
@@ -12,6 +13,7 @@ Início 390×844: sem overflow horizontal
 Histórico vazio 390×844
 Perfil escuro 390×844: sem overflow horizontal
 Tema escuro persiste ao reabrir 390×844
+Fundo e contraste claro/escuro 390×844
 Erro Spotify 403 tratado 390×844
 Corrida 390×844: sem overflow horizontal
 Falha ao salvar: nova tentativa preserva payload e duração
@@ -22,9 +24,10 @@ Início 768×1024: sem overflow horizontal
 Histórico vazio 768×1024
 Perfil escuro 768×1024: sem overflow horizontal
 Tema escuro persiste ao reabrir 768×1024
+Fundo e contraste claro/escuro 768×1024
 Erro Spotify 403 tratado 768×1024
 Corrida 768×1024: sem overflow horizontal
 Resumo 768×1024: sem overflow horizontal
 Iniciar → GPS simulado → pausar → retomar → salvar → resumo 768×1024
 Exclusão e histórico atualizado 768×1024
-PASS: 29 verificações. APIs e GPS simulados; Chromium.
+PASS: 32 verificações. APIs e GPS simulados; Chromium.

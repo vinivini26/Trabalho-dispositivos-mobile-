@@ -27,7 +27,7 @@ O código do MarketGo também foi preservado. Commits antigos não foram reescri
 
 Foram implementadas as telas e camadas do guia: login Google, guarda de sessão, início,
 estatísticas semanais, corrida com GPS, histórico, resumo, perfil, temas persistentes,
-componentes Liquid Glass, traçado SVG e integração Spotify. Schema SQL, RLS e testes
+componentes de vidro, traçado SVG e integração Spotify. Schema SQL, RLS e testes
 locais do banco acompanham o código.
 
 A identificação de autoria usa `vinivini26`. O nome do aplicativo permanece **RotaFit**.
@@ -87,9 +87,9 @@ Os identificadores nativos são `com.vinivini26.rotafit`.
 | Banco (`npm run test:db`) | 3 grupos, 11 testes aprovados |
 | Formatação Prettier | Aprovada |
 | Matriz Expo (`expo install --check`, offline) | Compatível com a matriz instalada; checagem não consulta o serviço Expo |
-| Interface em Chromium | 29 verificações aprovadas; serviços e GPS simulados |
-| Exportação Android | Bundle JavaScript/Hermes gerado; 1.599 módulos |
-| APK Android nativo (`assembleDebug`) | Bloqueado por HTTP 403 ao acessar `www.jitpack.io`; APK não gerado |
+| Interface em Chromium | 32 verificações aprovadas após simplificação; serviços e GPS simulados |
+| Exportação Android | Bundle JavaScript/Hermes gerado; 1.595 módulos |
+| APK Android nativo (`assembleDebug`) | Nesta revisão, sem JitPack; bloqueado no download de React Native por `repo.reactnative.dev` |
 | Sem credenciais | Tela de configuração testada em 320×568, tema persistente, sem erro JS ou overflow |
 
 Ambiente de verificação: Node 24.19.0 e Chromium 154.0.8037.57.
@@ -131,7 +131,7 @@ O app controla o Spotify, sem streaming próprio. Não há rastreamento em segun
 nem fila persistente de corridas offline. Dados de corrida não salvos se perdem se o
 processo for encerrado; a interface orienta manter a tela aberta e repetir o envio.
 
-## Compilação nativa: resultado e bloqueio
+## Histórico da primeira compilação nativa (antes da substituição visual)
 
 `expo prebuild --platform android --no-install` gerou o projeto nativo corretamente.
 Foram instaladas e conferidas as ferramentas necessárias: JDK 17.0.21+9 e NDK
@@ -155,5 +155,39 @@ o efeito solicitado para mascarar a falha. Para concluir a compilação neste am
 é necessário permitir `www.jitpack.io` nas configurações de rede e repetir o build.
 O trecho de erro está em `docs/VALIDACAO_NATIVA.txt`.
 
-**Não há APK validado nesta entrega.** O bundle Android aprovado comprova o empacotamento
+**Na primeira tentativa não foi gerado APK.** O bundle Android aprovado comprovou o empacotamento
 JavaScript/Hermes; não substitui compilação nativa, instalação nem teste em aparelho.
+
+## Revisão solicitada: visual simples sem JitPack
+
+Após a publicação da primeira entrega, o usuário autorizou substituir o efeito que
+exigia JitPack por uma solução simples e bonita. `expo-blur` foi removido do package.json,
+lockfile e autolinking. `GlassSurface` usa cores translúcidas, degradê de reflexo e borda;
+a barra de abas usa um degradê da própria paleta. As propriedades de intensidade de
+blur e seus comentários foram retirados dos componentes e telas.
+
+A aplicação mantém as funcionalidades e as paletas do guia, com uma adaptação visual
+explicitamente autorizada. Não é necessário liberar JitPack para obter o efeito atual.
+`npm ls expo-blur` confirma que a biblioteca não está instalada. O projeto Android foi
+regenerado a partir da configuração Expo, eliminando referências nativas antigas.
+
+A tipagem e os 52 testes de regras/hooks e banco passaram novamente. As capturas e os
+logs da interface foram renovados para representar esta revisão.
+
+A inspeção visual também identificou que as abas mantinham um fundo padrão claro ao
+selecionar tema escuro. Foi aplicado `theme.background` ao `sceneStyle` das abas e
+adicionada verificação do fundo nos dois temas. A revisão passou em 32 verificações de
+interface, nas três dimensões já documentadas, além dos 52 testes de regras e banco.
+
+O build nativo regenerado executou 167 tarefas (139 executadas e 28 já atualizadas),
+sem solicitar BlurView/JitPack. A falha seguinte foi no download essencial
+`com.facebook.react:react-android:0.86.3`, redirecionado de Maven Central para
+`repo.reactnative.dev`, também bloqueado pela rede desta instância. Remover essa
+biblioteca eliminaria a base do aplicativo; ela foi preservada.
+
+Foi incluído `.github/workflows/rotafit-android.yml` para testes e compilação no GitHub
+Actions. O workflow produz APK de homologação arm64 com JavaScript incluído e assinatura
+de desenvolvimento. Credenciais públicas podem ser configuradas nas variáveis do
+repositório; sem elas, o APK abre a configuração inicial. A execução do workflow precisa
+concluir com sucesso antes de se considerar um APK gerado. Não houve nova alegação de
+teste com Google, Spotify ou GPS reais.

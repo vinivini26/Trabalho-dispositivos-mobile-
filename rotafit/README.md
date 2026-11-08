@@ -14,7 +14,8 @@ outubro de 2026. FinTrack e MarketGo são projetos independentes do mesmo reposi
 - Histórico, resumo, exclusão e estatísticas semanais, com isolamento por usuário via RLS.
 - Spotify com OAuth/PKCE, tokens no SecureStore nativo, renovação, faixa atual e controles.
 - Tema claro Milano Red/Lemon Chiffon, escuro inspirado no Flamengo e preferência do sistema.
-- Superfícies Liquid Glass, áreas seguras, rolagem e alvos de toque para telas pequenas.
+- Visual de vidro leve: transparência, reflexos em degradê, bordas suaves e temas claro/escuro.
+- Áreas seguras, rolagem e alvos de toque para telas pequenas.
 - Falha de salvamento permite repetir o mesmo payload sem criar outra corrida se a primeira
   gravação tiver sido concluída antes de uma queda de conexão.
 
@@ -87,13 +88,31 @@ Para um servidor de teste já iniciado com as variáveis fictícias indicadas no
 informe `ROTAFIT_UI_URL`. O navegador é um instrumento de teste, não a plataforma
 homologada do aplicativo.
 
-**APK ainda não gerado neste ambiente:** a compilação nativa ficou bloqueada por
-HTTP 403 ao baixar a dependência BlurView em `www.jitpack.io`. A exportação Android
-passou, mas é um bundle JavaScript/Hermes, não um APK instalável. Para concluir a
-compilação aqui, esse domínio precisa ser permitido nas configurações de rede do ambiente.
+O visual usa React Native e `expo-linear-gradient`, sem `expo-blur` e sem a dependência
+BlurView hospedada no JitPack. Essa simplificação foi solicitada pelo usuário e mantém
+as cores, os cartões, os botões e a navegação nos dois temas.
 
 Resultados e limitações: [relatório](docs/RELATORIO_DESENVOLVIMENTO.md),
 [logs automatizados](docs/VALIDACAO.txt) e [verificações da interface](docs/VALIDACAO_UI.txt).
+
+## APK pelo GitHub Actions
+
+Na aba **Actions** do repositório, abra **RotaFit - Testes e APK**. A rotina executa
+os testes e compila um APK arm64 com o JavaScript incluído. Quando concluir com sucesso,
+abra a execução e baixe **Artifacts → RotaFit-homologacao-arm64**. Também pode ser
+iniciada por **Run workflow**. O artefato fica disponível por 14 dias.
+
+O APK é para homologação, usa a chave de assinatura de desenvolvimento do template
+Expo e não é uma versão assinada para publicação em loja. Para configurar as integrações,
+defina as três variáveis públicas `EXPO_PUBLIC_*` em **Settings → Secrets and variables →
+Actions → Variables** do repositório antes de executar. Sem elas, o app mostra configuração
+inicial; isso não equivale a login/corrida homologados. Não coloque segredos de servidor
+nessas variáveis. Nunca use `service_role` ou client secret no bundle.
+
+O build local desta revisão ultrapassou a etapa que exigia JitPack, mas o ambiente
+bloqueou `repo.reactnative.dev`, servidor de uma dependência essencial do React Native.
+O resultado do workflow deve ser conferido na aba Actions; a existência do arquivo de
+workflow, por si só, não comprova a geração de um APK.
 
 ## Capturas
 

@@ -47,7 +47,7 @@ export function RoutePath({ route, height = 240, live = false }: RoutePathProps)
 
   if (route.length < 2) {
     return (
-      <GlassSurface radius={radius.lg} style={[styles.wrap, { height }]} intensity={20}>
+      <GlassSurface radius={radius.lg} style={[styles.wrap, { height }]}>
         <View style={styles.emptyState}>
           <Ionicons name="location-outline" size={28} color={theme.muted} />
           <Text style={[styles.emptyText, { color: theme.muted }]}>
@@ -91,7 +91,7 @@ export function RoutePath({ route, height = 240, live = false }: RoutePathProps)
   }
 
   return (
-    <GlassSurface radius={radius.lg} style={[styles.wrap, { height }]} intensity={20}>
+    <GlassSurface radius={radius.lg} style={[styles.wrap, { height }]}>
       <Svg width="100%" height={H} viewBox={`0 0 ${W} ${H}`}>
         <Defs>
           <SvgGradient

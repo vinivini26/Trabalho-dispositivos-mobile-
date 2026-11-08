@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { BlurView } from 'expo-blur';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Tabs } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import type { ColorValue } from 'react-native';
@@ -12,7 +12,7 @@ function tabIcon(name: IconName) {
   );
 }
 
-// A barra de abas também é vidro: um blur cobrindo toda a barra, sem fundo opaco.
+// Barra com degradê sutil e borda, usando a mesma paleta dos cartões.
 export default function TabsLayout() {
   const { theme } = useTheme();
 
@@ -20,18 +20,20 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        sceneStyle: { backgroundColor: theme.background },
         tabBarActiveTintColor: theme.primary,
         tabBarInactiveTintColor: theme.muted,
         tabBarStyle: {
           position: 'absolute',
           backgroundColor: 'transparent',
-          borderTopWidth: 0,
+          borderTopWidth: 1,
+          borderTopColor: theme.border,
           elevation: 0,
         },
         tabBarBackground: () => (
-          <BlurView
-            intensity={50}
-            tint={theme.mode === 'dark' ? 'dark' : 'light'}
+          <LinearGradient
+            pointerEvents="none"
+            colors={[theme.surface, theme.background]}
             style={StyleSheet.absoluteFill}
           />
         ),

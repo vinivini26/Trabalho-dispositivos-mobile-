@@ -130,7 +130,6 @@ export default function ActiveRunScreen() {
               tint={theme.primary}
               radius={radius.pill}
               style={[styles.startBtn, glassShadow(theme.primary)]}
-              intensity={0}
               opacity={0.94}
             >
               <Text style={[styles.startText, { color: theme.onPrimary }]}>
@@ -151,7 +150,7 @@ export default function ActiveRunScreen() {
       <RoutePath route={tracker.route} height={280} live />
 
       <View style={styles.stats}>
-        <GlassSurface radius={radius.lg} style={styles.statsCard} intensity={30}>
+        <GlassSurface radius={radius.lg} style={styles.statsCard}>
           <Stat label="Distância" value={formatDistance(tracker.distanceMeters)} big />
           <View style={styles.statsRow}>
             <Stat label="Tempo" value={formatDuration(tracker.elapsedSeconds)} />
@@ -250,7 +249,6 @@ function ControlButton({
         tint={tint}
         radius={radius.pill}
         style={[styles.controlBtn, glassShadow(tint)]}
-        intensity={0}
         opacity={0.94}
       >
         <Ionicons name={icon} size={28} color={theme.onPrimary} />

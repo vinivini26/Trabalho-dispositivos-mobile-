@@ -9,7 +9,7 @@ const base = process.env.ROTAFIT_UI_URL ?? 'http://localhost:8081';
 let server;
 if (!process.env.ROTAFIT_UI_URL) {
   server = spawn('npx', ['expo', 'start', '--web', '--port', '8081'], {
-    env: { ...process.env, CI: '1', EXPO_NO_TELEMETRY: '1',
+    env: { ...process.env, BROWSER: 'none', CI: '1', EXPO_NO_TELEMETRY: '1',
       EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54321', EXPO_PUBLIC_SUPABASE_KEY: 'ui-test-public-key' },
     stdio: 'ignore', detached: true,
   });
@@ -28,6 +28,19 @@ async function layout(page, name) {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
   assert.equal(overflow, false, `${name}: overflow horizontal`);
   checks.push(`${name}: sem overflow horizontal`);
+}
+async function checkThemeBackground(page, dark) {
+  const channels = await page.getByText('Pronto para correr?', { exact: true }).evaluate((element) => {
+    for (let node = element; node; node = node.parentElement) {
+      const color = getComputedStyle(node).backgroundColor;
+      if (color === 'transparent' || color.endsWith(', 0)')) continue;
+      const values = color.match(/[\d.]+/g)?.map(Number);
+      if (values && (values.length === 3 || values[3] >= 0.95)) return values.slice(0, 3);
+    }
+    return [255, 255, 255];
+  });
+  assert.ok(dark ? channels.every((n) => n < 50) : channels[0] > 180 && channels[1] > 180,
+    `Fundo do tema ${dark ? 'escuro' : 'claro'} incorreto: ${channels}`);
 }
 async function capture(page, name) { await page.screenshot({ path: new URL(name + '.png', output).pathname, fullPage: true }); }
 async function mockBackend(context, state) {
@@ -106,6 +119,7 @@ try {
     page.on('dialog', (dialog) => { console.log('Diálogo:', dialog.message()); return dialog.accept(); });
     await page.goto(base); await visible(page, 'Pronto para correr?');
     await visible(page, 'Faixa de teste');
+    await checkThemeBackground(page, false);
     await layout(page, `Início ${label}`); await capture(page, `inicio-claro-${viewport.width}`);
     await page.getByRole('tab', { name: /Histórico/ }).click();
     await visible(page, 'Nenhuma corrida ainda'); checks.push(`Histórico vazio ${label}`);
@@ -117,6 +131,8 @@ try {
     checks.push(`Tema escuro persiste ao reabrir ${label}`);
     await page.getByRole('tab', { name: /Início/ }).click();
     await visible(page, 'Pronto para correr?');
+    await checkThemeBackground(page, true);
+    checks.push(`Fundo e contraste claro/escuro ${label}`);
     await capture(page, `inicio-escuro-${viewport.width}`);
     await page.getByRole('button', { name: 'Pausar', exact: true }).click();
     await visible(page, 'O controle exige Spotify Premium e acesso autorizado ao aplicativo. Confira sua conta no Spotify.');
