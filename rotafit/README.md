@@ -1,9 +1,27 @@
-# RotaFit — vinivini26
+# Trabalho 3 — RotaFit | vinivini26
 
 Projeto 3 da série de Programação para Dispositivos Móveis: aplicativo Android/iOS
 para acompanhar corridas com GPS, guardar o histórico e controlar o Spotify.
 Baseado no **RotaFit — Guia Passo a Passo**, Prof. Me. Bruno Assunção Dias / IESB,
 outubro de 2026. FinTrack e MarketGo são projetos independentes do mesmo repositório.
+
+[← Voltar aos três trabalhos](../README.md) · [Documentação do RotaFit](docs/README.md)
+
+## Onde encontrar cada arquivo
+
+| Caminho | Conteúdo |
+| --- | --- |
+| `app/` | Telas de login, início, corrida, histórico, resumo e perfil. |
+| `src/components/` / `src/theme/` | Componentes visuais e temas claro/escuro. |
+| `src/hooks/` / `src/utils/` | Rastreamento GPS, relógio e regras da corrida. |
+| `src/context/` / `src/lib/` / `src/services/` | Sessões, OAuth, armazenamento e acesso aos serviços. |
+| `src/types/` | Tipos compartilhados pelo aplicativo. |
+| `__tests__/` | Testes das regras, dos hooks e do salvamento. |
+| `supabase/` | Schema SQL, permissões e testes do banco. |
+| `scripts/` | Verificações de interface com serviços simulados. |
+| `package.json` / `package-lock.json` | Comandos, dependências e versões. |
+| `app.json` / `tsconfig.json` / `.env.example` | Configuração do Expo, TypeScript e exemplo de variáveis. |
+| [docs/](docs/README.md) | Relatório, testes, compilação e capturas deste trabalho. |
 
 ## Funcionalidades
 

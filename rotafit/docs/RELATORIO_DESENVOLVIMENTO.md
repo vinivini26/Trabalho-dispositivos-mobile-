@@ -3,6 +3,10 @@
 Relatório de implementação e verificação — 08/11/2026.
 Repositório: [vinivini26/Trabalho-dispositivos-mobile-](https://github.com/vinivini26/Trabalho-dispositivos-mobile-).
 
+> Organização atual do repositório: `fintrack/`, `marketgo/` e `rotafit/` são trabalhos
+> independentes. O relatório financeiro e as instruções do FinTrack ficam agora em
+> [fintrack/docs/](../../fintrack/docs/README.md). Caminhos antigos abaixo são registros históricos.
+
 ## Pedido e escopo
 
 O usuário confirmou que FinTrack, MarketGo e RotaFit são projetos diferentes da mesma
@@ -19,9 +23,10 @@ nome do usuário. O envio do código ao GitHub foi solicitado explicitamente pel
 
 A branch `marketgo-react-native`, commit `44f6fcc`, foi incorporada por fast-forward ao
 trabalho atual, preservando o commit `9711bc2` do FinTrack. O RotaFit fica em `rotafit/`.
-O README principal identifica **vinivini26** e apresenta os três aplicativos. As instruções
-originais do FinTrack estão em `docs/FINTRACK.md`; seu código e relatório foram preservados.
-O código do MarketGo também foi preservado. Commits antigos não foram reescritos.
+O README principal identifica **vinivini26** e apresenta os três aplicativos. Na reorganização
+posterior, código e documentação do FinTrack foram reunidos em `fintrack/`, com instruções
+em [fintrack/README.md](../../fintrack/README.md). Seu código e relatório foram preservados,
+assim como o código do MarketGo. Commits antigos não foram reescritos.
 
 ## Implementação
 

@@ -1,12 +1,17 @@
 # Relatório de desenvolvimento — MarketGo React Native
 
-Data: 27/10/2026. Repositório: vinivini26/Trabalho-dispositivos-mobile-.
+Data da implementação: 27/10/2026.
+
+> Organização atual: este relatório documenta o MarketGo. O FinTrack está em `fintrack/`,
+> e o RotaFit em `rotafit/`. As referências à raiz nos registros históricos descrevem a estrutura anterior.
+
+Repositório: vinivini26/Trabalho-dispositivos-mobile-.
 
 ## 1. Objetivo, fontes e método
 
 Criar MarketGo em React Native na pasta marketgo/, preservando o FinTrack Flutter existente. Base: PDF MarketGo — Guia Passo a Passo, 104 páginas, Prof. Me. Bruno Assunção Dias, IESB, setembro/2026. Os códigos do guia foram extraídos, organizados, corrigidos e verificados. O PDF foi usado como referência técnica; suas instruções de publicar ou criar contas não foram executadas automaticamente.
 
-Este relatório registra as ocorrências desta sessão. O histórico anterior do FinTrack permanece em ../docs/RELATORIO_DESENVOLVIMENTO.md e não constitui histórico do MarketGo. Não há acesso a todas as conversas anteriores com outras IAs. Respostas abaixo são sínteses, identificadas como tal, e não transcrições inventadas.
+Este relatório registra as ocorrências desta sessão. O histórico do FinTrack está em [fintrack/docs/RELATORIO_DESENVOLVIMENTO.md](../../fintrack/docs/RELATORIO_DESENVOLVIMENTO.md) e não constitui histórico do MarketGo. Não há acesso a todas as conversas anteriores com outras IAs. Respostas abaixo são sínteses, identificadas como tal, e não transcrições inventadas.
 
 ## 2. Prompts e decisões
 

@@ -1,7 +1,5 @@
-.dart_tool/
-.flutter-plugins-dependencies
-build/
-android/local.properties
-android/.gradle/
-*.iml
+# Arquivos locais comuns aos três projetos
+.DS_Store
+Thumbs.db
 .idea/
+*.iml

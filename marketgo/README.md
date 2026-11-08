@@ -1,7 +1,23 @@
-# MarketGo
+# Trabalho 2 — MarketGo
 
 Aplicativo mobile de compras com entrega: escolha uma loja, monte o carrinho, finalize o
 pedido e acompanhe cada etapa até a entrega. Os pagamentos são simulados.
+
+[← Voltar aos três trabalhos](../README.md) · [Documentação do MarketGo](docs/README.md)
+
+## Onde encontrar cada arquivo
+
+| Caminho | Conteúdo |
+| --- | --- |
+| `app/` | Telas de acesso, catálogo, carrinho, checkout e pedidos. |
+| `src/` | Componentes, sessão, carrinho, regras, validação e serviços. |
+| `__tests__/` | Testes das regras do aplicativo. |
+| `supabase/schema.sql` | Tabelas, permissões e funções do banco. |
+| `supabase/seed.sql` | Catálogo inicial de lojas e produtos. |
+| `supabase/tests/` | Testes locais do banco com PGlite. |
+| `package.json` / `package-lock.json` | Comandos, dependências e versões. |
+| `app.json` / `tsconfig.json` / `.env.example` | Configuração do Expo, TypeScript e exemplo de variáveis. |
+| [docs/](docs/README.md) | Relatório, PDF e resultados de testes deste trabalho. |
 
 ## Funcionalidades
 
@@ -21,7 +37,16 @@ TanStack Query · React Hook Form · Zod · Jest · PGlite (testes do banco)
 
 ## Como executar
 
-1. Instale as dependências: `npm install`
+A partir da raiz do repositório:
+
+```sh
+cd marketgo
+npm ci
+```
+
+Os passos seguintes devem ser executados dentro de `marketgo/`:
+
+1. Confira as dependências instaladas pelo comando acima.
 2. Crie um projeto no [Supabase](https://supabase.com) e execute, nesta ordem,
    `supabase/schema.sql` e `supabase/seed.sql` no SQL Editor.
 3. Copie `.env.example` para `.env` e preencha a URL e a chave pública do projeto.
@@ -62,7 +87,7 @@ supabase/
 
 ## Entrega e validação
 
-Este projeto foi criado em `marketgo/`, preservando o FinTrack Flutter na raiz do repositório. Baseado no guia MarketGo, Prof. Me. Bruno Assunção Dias / IESB, setembro de 2026.
+Este aplicativo está em `marketgo/`. O FinTrack é um projeto independente, organizado em `fintrack/`. Baseado no guia MarketGo, Prof. Me. Bruno Assunção Dias / IESB, setembro de 2026.
 
 Use Node 22 LTS ou superior e `npm ci`. Se o Supabase não estiver configurado, o app exibe instruções de configuração. A tela não representa uma conexão concluída.
 
@@ -70,6 +95,6 @@ No Supabase, crie um projeto novo e rode schema.sql uma única vez, seguido de s
 
 A atualização do acompanhamento consulta o banco a cada 5 segundos. O avanço do status é acionado pelo botão de demonstração, não por entregadores reais. Não há cobrança financeira.
 
-Consulte [o relatório de desenvolvimento](docs/RELATORIO_DESENVOLVIMENTO.md) para prompts, respostas sintetizadas, erros, soluções e limites da validação. O histórico anterior do FinTrack permanece em ../docs/RELATORIO_DESENVOLVIMENTO.md.
+Consulte [o relatório de desenvolvimento](docs/RELATORIO_DESENVOLVIMENTO.md) para prompts, respostas sintetizadas, erros, soluções e limites da validação. O histórico do FinTrack fica na [documentação do trabalho 1](../fintrack/docs/README.md).
 
 Autor do repositório: [vinivini26](https://github.com/vinivini26).
