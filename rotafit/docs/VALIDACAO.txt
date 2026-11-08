@@ -1,0 +1,116 @@
+RotaFit — vinivini26
+Validação em 08/11/2026. Node 24; Chromium; APIs externas simuladas nos testes de interface.
+
+=== TypeScript ===
+> rotafit@1.0.0 typecheck
+> tsc --noEmit
+
+=== Testes do app e banco ===
+> rotafit@1.0.0 test
+> npm run test:app && npm run test:db
+
+
+> rotafit@1.0.0 test:app
+> jest --runInBand
+
+PASS __tests__/runs.test.ts
+PASS __tests__/useRunTracker.test.js
+PASS __tests__/geo.test.ts
+PASS __tests__/tracker.test.ts
+PASS __tests__/regressions.test.ts
+PASS __tests__/greeting.test.ts
+
+Test Suites: 6 passed, 6 total
+Tests:       41 passed, 41 total
+Snapshots:   0 total
+Time:        2.88 s, estimated 3 s
+Ran all test suites.
+
+> rotafit@1.0.0 test:db
+> node --test "supabase/tests/*.test.mjs"
+
+▶ segurança e privacidade
+  ✔ cada usuário só lê as próprias corridas (30.748061ms)
+  ✔ não é possível criar uma corrida em nome de outro usuário (7.74329ms)
+  ✔ visitante (anon) não lê nem escreve (8.074319ms)
+  ✔ cada usuário só apaga as próprias corridas (88.262429ms)
+✔ segurança e privacidade (4236.280871ms)
+▶ restrições dos dados
+  ✔ recusa distância negativa (11.711567ms)
+  ✔ recusa duração zero ou negativa (16.490855ms)
+  ✔ recusa terminar antes de começar (7.07114ms)
+  ✔ aceita ritmo médio nulo (corrida sem distância registrada) (8.649186ms)
+  ✔ guarda a rota como jsonb consultável (10.559826ms)
+✔ restrições dos dados (55.221244ms)
+▶ weekly_stats
+  ✔ soma só as corridas da semana atual e só as do usuário logado (79.139083ms)
+  ✔ visitante (anon) não executa a função (9.670492ms)
+✔ weekly_stats (89.063961ms)
+ℹ tests 11
+ℹ suites 3
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4940.757437
+
+=== Prettier ===
+Checking formatting...
+All matched files use Prettier code style!
+
+=== Matriz Expo offline ===
+Dependency validation is unreliable in offline-mode
+Dependencies are up to date
+
+=== Exportação Android (JavaScript/Hermes; não é APK) ===
+Starting Metro Bundler
+
+Android Bundled 26290ms node_modules/expo-router/entry.js (1599 modules)
+
+› Assets (46):
+node_modules/@expo-google-fonts/material-symbols/400Regular/MaterialSymbols_400Regular.ttf (974KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.ttf (130KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.ttf (66KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/EvilIcons.ttf (13KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ttf (56KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf (166KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf (134KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf (34KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf (203KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Brands.ttf (209KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Regular.ttf (68KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome6_Solid.ttf (424KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Fontisto.ttf (314KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Foundation.ttf (57KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf (390KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf (1.3MB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf (357KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Octicons.ttf (69KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.ttf (54KB)
+node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Zocial.ttf (26KB)
+node_modules/expo-router/assets/arrow_down.png (9.5KB)
+node_modules/expo-router/assets/arrow_right.xml (307B)
+node_modules/expo-router/assets/checkmark.xml (312B)
+node_modules/expo-router/assets/error.png (469B)
+node_modules/expo-router/assets/file.png (138B)
+node_modules/expo-router/assets/forward.png (188B)
+node_modules/expo-router/assets/pkg.png (364B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon-mask.png (653B)
+node_modules/expo-router/assets/react-navigation/elements/back-icon.png (4 variations | 152B)
+node_modules/expo-router/assets/react-navigation/elements/clear-icon.png (4 variations | 425B)
+node_modules/expo-router/assets/react-navigation/elements/close-icon.png (4 variations | 235B)
+node_modules/expo-router/assets/react-navigation/elements/search-icon.png (4 variations | 599B)
+node_modules/expo-router/assets/sitemap.png (465B)
+node_modules/expo-router/assets/unmatched.png (4.8KB)
+
+› android bundles (1):
+_expo/static/js/android/entry-919936d8d19f86f36db6c9e37bdc05f4.hbc (4.3MB)
+
+› Files (1):
+metadata.json (3KB)
+
+Exported: /workspace/work/rotafit-android-verified
+
+=== Sem configuração Supabase (serviços não conectados) ===
+PASS: sem credenciais, tela de configuração acessível em 320×568; tema persiste; sem erros JS nem overflow horizontal.

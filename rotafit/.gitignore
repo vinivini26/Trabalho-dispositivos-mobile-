@@ -1,0 +1,13 @@
+# Segredos locais
+.env
+.env.*
+!.env.example
+
+node_modules/
+.expo/
+dist/
+coverage/
+*.tsbuildinfo
+
+/android/
+/ios/

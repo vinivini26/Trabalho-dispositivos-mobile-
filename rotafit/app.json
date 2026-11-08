@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "RotaFit",
+    "slug": "rotafit",
+    "scheme": "rotafit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "O RotaFit usa sua localização para registrar a rota e o ritmo da corrida."
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vinivini26.rotafit",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "O RotaFit usa sua localização para registrar a rota da corrida."
+      }
+    },
+    "android": {
+      "package": "com.vinivini26.rotafit",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    }
+  }
+}
