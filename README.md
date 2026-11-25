@@ -1,6 +1,6 @@
 # vinivini26 — Projetos de Dispositivos Móveis
 
-Este repositório reúne **três aplicativos independentes** da disciplina. Cada projeto
+Este repositório reúne **quatro aplicativos independentes** da disciplina. Cada projeto
 tem sua própria pasta, código, testes, configurações e documentação.
 
 ## Escolha o trabalho que deseja avaliar
@@ -10,12 +10,13 @@ tem sua própria pasta, código, testes, configurações e documentação.
 | **1** | **FinTrack** — finanças pessoais | Flutter / Dart | [Abrir FinTrack](fintrack/README.md) | [Relatório e estrutura](fintrack/docs/README.md) |
 | **2** | **MarketGo** — compras com entrega | React Native / Expo | [Abrir MarketGo](marketgo/README.md) | [Relatório e testes](marketgo/docs/README.md) |
 | **3** | **RotaFit** — corrida com GPS e Spotify | React Native / Expo | [Abrir RotaFit](rotafit/README.md) | [Relatório, testes e capturas](rotafit/docs/README.md) |
+| **4** | **ChatRoom** — mensagens em salas em tempo real | React Native / Expo | [Abrir ChatRoom](chatroom/README.md) | [Relatório de desenvolvimento](chatroom/docs/RELATORIO.md) |
 
 ## Como o repositório está organizado
 
 ```text
 .
-├── README.md               este índice dos três trabalhos
+├── README.md               este índice dos quatro trabalhos
 ├── .gitignore              arquivos locais comuns que não entram no Git
 ├── .github/workflows/      automação de testes e geração do APK do RotaFit
 ├── fintrack/               TRABALHO 1: aplicativo Flutter
@@ -32,14 +33,18 @@ tem sua própria pasta, código, testes, configurações e documentação.
 │   ├── __tests__/          testes do aplicativo
 │   ├── supabase/           banco, catálogo inicial e testes do banco
 │   └── docs/               documentação exclusiva do MarketGo
-└── rotafit/                TRABALHO 3: aplicativo de corrida
-    ├── README.md           apresentação, execução e acesso ao APK
-    ├── app/                telas e navegação
-    ├── src/                componentes, GPS, regras e integrações
-    ├── __tests__/          testes do aplicativo
-    ├── supabase/           banco e testes do banco
-    ├── scripts/            verificações de interface
-    └── docs/               documentação e capturas exclusivas do RotaFit
+├── rotafit/                TRABALHO 3: aplicativo de corrida
+│   ├── README.md           apresentação, execução e acesso ao APK
+│   ├── app/                telas e navegação
+│   ├── src/                componentes, GPS, regras e integrações
+│   ├── __tests__/          testes do aplicativo
+│   ├── supabase/           banco e testes do banco
+│   ├── scripts/            verificações de interface
+│   └── docs/               documentação e capturas exclusivas do RotaFit
+└── chatroom/               TRABALHO 4: aplicativo de mensagens
+    ├── app/ e src/         rotas e código
+    ├── supabase/           esquema SQL e testes de banco
+    └── docs/               relatório de desenvolvimento
 ```
 
 Os arquivos de dependências e configuração ficam dentro da pasta do respectivo app:
@@ -57,6 +62,7 @@ Não existe um aplicativo único para executar pela raiz.
 | FinTrack | Base inicial de interface. Cadastro de movimentações, persistência e Open Finance estão planejados. |
 | MarketGo | Fluxo de compras implementado, com testes registrados. Pagamentos e avanço de entrega são de demonstração; o Supabase precisa ser configurado. |
 | RotaFit | Aplicativo implementado, testes e APK de homologação aprovados no GitHub. Google, Spotify e GPS em aparelho ainda precisam de homologação real. |
+| ChatRoom | Tipagem e testes locais verificados. A homologação do Supabase Realtime exige duas sessões conectadas. |
 
 ## Executar ou testar
 
@@ -68,6 +74,7 @@ as ferramentas, configurar serviços e compilar:
 | FinTrack | `cd fintrack` | `flutter analyze` e `flutter test` |
 | MarketGo | `cd marketgo` | `npm ci`, `npm run typecheck` e `npm test` |
 | RotaFit | `cd rotafit` | `npm ci`, `npm run typecheck` e `npm test` |
+| ChatRoom | `cd chatroom` | `npm ci`, `npm run typecheck` e `npm test` |
 
 A automação compartilhada em [`.github/workflows/rotafit-android.yml`](.github/workflows/rotafit-android.yml)
 pertence ao RotaFit. As instruções e o link de download do APK estão no
